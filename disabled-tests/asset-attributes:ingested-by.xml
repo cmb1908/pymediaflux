@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<filter namespace="asset-attributes" name="ingested-by">
+  <label>Ingested By</label>
+  <arg>
+    <name>username</name>
+    <label>Username</label>
+    <type>
+      <name>string</name>
+    </type>
+  </arg>
+  <aql>created by '$${username}$$'</aql>
+</filter>

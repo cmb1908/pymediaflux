@@ -8,7 +8,7 @@
       <name>string</name>
     </type>
   </arg>
-  <aql>xpath(powerhouse:related-entities/entity/@entity-irn) = '$${value}$$' or xpath(powerhouse:related-objects/object/@object-irn) = '$${value}$$' or xpath(powerhouse:related-places/place/@place-irn) = '$${value}$$' or xpath(powerhouse:related-programmes/programme/@programme-irn) = '$${value}$$' or xpath(emu:record/irn) = '$${value}$$'</aql>
+  <aql>xpath(powerhouse:related-entities/entity/@entity-irn) matches '$${value}$$' or xpath(powerhouse:related-objects/object/@object-irn) matches '$${value}$$' or xpath(powerhouse:related-places/place/@place-irn) matches '$${value}$$' or xpath(powerhouse:related-programmes/programme/@programme-irn) matches '$${value}$$' or xpath(emu:record/irn) matches '$${value}$$'</aql>
   <tag>ui:PASTE_DELIMITER_COMMA</tag>
   <tag>ui:PASTE_DELIMITER_SPACE</tag>
   <tag>ui:PASTE_DELIMITER_NEW_LINE</tag>

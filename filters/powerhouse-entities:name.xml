@@ -16,11 +16,10 @@
       <name>enumeration</name>
       <restriction base="enumeration">
         <value description="equals">= ignore-case</value>
-        <value description="contains any of">contains-any ignore-case</value>
-        <value description="contains all of">contains-all ignore-case</value>
-        <value description="contains exactly">contains ignore-case literal</value>
+        <value description="matches anywhere">matches anywhere ignore-case</value>
+        <value description="matches">matches ignore-case</value>
       </restriction>
     </type>
   </arg>
-  <aql>(mtext contains-any ignore-case '$${name}$$' and xpath(powerhouse.entity.of.interest:cataloging/name) $${Operator}$$ '$${name}$$') or (mtext contains-any ignore-case '$${name}$$' and xpath(powerhouse:related-entities/entity/name) $${Operator}$$ '$${name}$$' and xpath(emu:record/resource) = 'eparties')</aql>
+  <aql>xpath(powerhouse.entity.of.interest:cataloging/name) $${Operator}$$ '$${name}$$' or (xpath(powerhouse:related-entities/entity/name) $${Operator}$$ '$${name}$$' and xpath(emu:record/resource) = 'eparties')</aql>
 </filter>
