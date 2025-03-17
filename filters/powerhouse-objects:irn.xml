@@ -8,7 +8,7 @@
       <name>string</name>
     </type>
   </arg>
-  <aql>xpath(powerhouse:related-objects/object/@object-irn) = '$${value}$$' or (xpath(emu:record/irn) = '$${value}$$' and xpath(emu:record/resource) = 'ecatalogue')</aql>
+  <aql>xpath(powerhouse:related-objects/object/@object-irn) matches '$${value}$$' or (xpath(emu:record/irn) matches '$${value}$$' and xpath(emu:record/resource) matches 'ecatalogue')</aql>
   <tag>ui:PASTE_DELIMITER_COMMA</tag>
   <tag>ui:PASTE_DELIMITER_SPACE</tag>
   <tag>ui:PASTE_DELIMITER_NEW_LINE</tag>

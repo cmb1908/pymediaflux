@@ -8,9 +8,8 @@
       <name>enumeration</name>
       <restriction base="enumeration">
           <value description="equals">= ignore-case</value>
-          <value description="contains any of">contains-any ignore-case</value>
-          <value description="contains all of">contains-all ignore-case</value>
-          <value description="contains exactly">contains ignore-case literal</value>
+          <value description="matches anywhere">matches anywhere ignore-case</value>
+          <value description="matches">matches ignore-case</value>
       </restriction>
     </type>
   </arg>
@@ -21,5 +20,5 @@
       <name>string</name>
     </type>
   </arg>
-  <aql>mtext contains-any ignore-case '$${value}$$' and xpath(powerhouse.object.of.interest:description/description) $${op}$$ '$${value}$$'</aql>
+  <aql>xpath(powerhouse.object.of.interest:description/description) $${op}$$ '$${value}$$'</aql>
 </filter>

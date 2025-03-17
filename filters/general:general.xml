@@ -9,5 +9,5 @@
       <name>string</name>
     </type>
   </arg>
-  <aql>name matches anywhere ignore-case '$${Value}$$' or mtext contains-any ignore-case '$${Value}$$'</aql>
+  <aql>name matches anywhere ignore-case '$${Value}$$' or mtext matches anywhere ignore-case '$${Value}$$'</aql>
 </filter>
