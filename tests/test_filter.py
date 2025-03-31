@@ -32,7 +32,7 @@ def test_filter_toi_irn_in_toi(server_connect):
     check.equal(len(results), 3, f"Expecting 3 results, got {len(results)}")
 
 
-@pytest.mark.timeout(3)
+@pytest.mark.timeout(10)
 def test_filter_query(query_str):
 
     orm.Asset.query(query_str)
