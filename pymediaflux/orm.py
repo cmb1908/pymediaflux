@@ -459,11 +459,6 @@ class Asset(Request):
         return "" if parent is None else cast(str, parent.text)
 
     @property
-    def size(self) -> Optional[int]:
-        sz = self.data.xpath("./content/size/text()")
-        return None if len(sz) == 0 else int(sz[0])
-
-    @property
     def type(self) -> str:
         ty = self.data.find("type")
         return "" if ty is None else cast(str, ty.text)

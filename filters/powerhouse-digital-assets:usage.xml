@@ -8,12 +8,8 @@
       <name>enumeration</name>
       <restriction base="enumeration">
         <value description="equals">= ignore-case</value>
-        <value description="not equals">!= ignore-case</value>
-        <value description="contains any">contains-any ignore-case</value>
-        <value description="contains all">contains-all ignore-case</value>
-        <value description="contains exactly">contains ignore-case literal</value>
-        <value description="starts with">starts with ignore-case</value>
-        <value description="ends with">ends with ignore-case</value>
+        <value description="matches anywhere">matches anywhere ignore-case</value>
+        <value description="matches">matches ignore-case</value>
       </restriction>
     </type>
   </arg>

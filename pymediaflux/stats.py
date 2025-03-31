@@ -20,11 +20,10 @@ def stats(obj: "orm.Asset"):
         for asset in cobj.assets:
             r += stats(asset)
     else:
-        sz = 0 if obj.size is None else obj.size
         if obj.has_exif:
-            r[obj.type] = {obj.extension: {"exif": 1, "size": sz}}
+            r[obj.type] = {obj.extension: {"exif": 1}}
         else:
-            r[obj.type] = {obj.extension: {"no-exif": 1, "size": sz}}
+            r[obj.type] = {obj.extension: {"no-exif": 1}}
 
     return r
 
