@@ -18,5 +18,8 @@ filters:
 	for f in `find filters -name \*xml -print | grep -v :`; do python -m pymediaflux.replace_filter_namespace $$f; done
 	for f in filters/*:*.xml; do python -m pymediaflux.replace_filter $$f; done
 
+forms:
+	for f in forms/*.xml; do python -m pymediaflux.replace_form $$f; done
+
 clean:
 	rm -f $(WAREHOUSE_STATS)

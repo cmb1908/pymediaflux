@@ -37,9 +37,9 @@ def main(api_host, api_port, api_token, directory):
 
     # Construct the base URL
     if API_PORT:
-        url = f"http://{API_HOST}:{API_PORT}/__mflux_svc__"
+        url = f"https://{API_HOST}:{API_PORT}/__mflux_svc__"
     else:
-        url = f"http://{API_HOST}/__mflux_svc__"
+        url = f"https://{API_HOST}/__mflux_svc__"
 
     # Set headers
     headers = {

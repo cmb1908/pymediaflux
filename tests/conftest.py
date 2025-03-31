@@ -23,9 +23,9 @@ def _server_connect():
 
     # Construct the base URL
     if API_PORT:
-        url = f"http://{API_HOST}:{API_PORT}/__mflux_svc__"
+        url = f"https://{API_HOST}:{API_PORT}/__mflux_svc__"
     else:
-        url = f"http://{API_HOST}/__mflux_svc__"
+        url = f"https://{API_HOST}/__mflux_svc__"
 
     # Set headers
     headers = {
@@ -51,9 +51,14 @@ def pytest_generate_tests(metafunc):
         namespaces = orm.Namespace().filter_spaces()
 
         for ns in namespaces:
+            print(ns.label)
             for f in ns.filters:
+                print("---")
+                print(f.label)
+                print([(arg.name, arg.type) for arg in f.args])
                 ops = {
                     arg.name: {
+                        "asset": [100],
                         "asset-id": [100],
                         "date": ["01-Jan-2024"],
                         "integer": [100],

@@ -1,23 +1,24 @@
 import click
 from dotenv import load_dotenv
-import json
+from lxml import etree
 import os
 
 from . import orm
 
 
-def members(id: str):
-    obj = orm.Collection(id)
-    for m in obj.members:
-        print(m)
+def replace(filename: str):
+    with open(filename, "rb") as f:
+        form_xml = etree.parse(f).getroot()
+    filter = orm.Form.from_xml(form_xml)
+    filter.create()
 
 
 @click.command()
 @click.option("--api-host", required=False, help="API host (e.g., api.example.com)")
 @click.option("--api-port", required=False, help="API port (optional)")
 @click.option("--api-token", required=False, help="API token for authentication")
-@click.argument("id")
-def main(api_host, api_port, api_token, id):
+@click.argument("filename")
+def main(api_host, api_port, api_token, filename):
     """
     Sends a request to the MediaFlux API to fetch server version details.
     """
@@ -49,7 +50,7 @@ def main(api_host, api_port, api_token, id):
 
     orm.Request.url = url
     orm.Request.headers = headers
-    members(id)
+    replace(filename)
 
 
 if __name__ == "__main__":

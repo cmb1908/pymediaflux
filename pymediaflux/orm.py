@@ -63,7 +63,9 @@ class Request:
             if args is not None:
                 argstr += "".join(f"<{arg[0]}>{arg[1]}</{arg[0]}>" for arg in args)
             if xml is not None:
-                argstr += "".join(etree.tostring(x, encoding="utf-8").decode("utf-8") for x in xml)
+                argstr += "".join(
+                    etree.tostring(x, encoding="utf-8").decode("utf-8") for x in xml
+                )
             argstr += "</args>"
 
         payload = f"""
@@ -71,13 +73,17 @@ class Request:
                 <service name="{name}">{argstr}</service>
             </request>"""
 
-        response = requests.post(cls.url, headers=cls.headers, data=payload)
+        response = requests.post(
+            cls.url, headers=cls.headers, data=payload, verify=False
+        )
         response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
 
         try:
             return cls.parse_xml(response.text)
         except ValueError:
-            raise ValueError(f'Unexpected response from "{payload}" of "{response.text}"')
+            raise ValueError(
+                f'Unexpected response from "{payload}" of "{response.text}"'
+            )
 
     @property
     def data(self) -> "etree._Element":
@@ -86,7 +92,11 @@ class Request:
 
     def export(self, fn: str) -> None:
         with open(fn, "wb") as f:
-            f.write(etree.tostring(self.data, pretty_print=True, encoding="utf-8", xml_declaration=True))
+            f.write(
+                etree.tostring(
+                    self.data, pretty_print=True, encoding="utf-8", xml_declaration=True
+                )
+            )
 
 
 class Namespace(Request):
@@ -116,7 +126,9 @@ class Namespace(Request):
     @property
     def data(self) -> "etree._Element":
         if self._data is None:
-            r = self.post("asset.filter.namespace.describe", [("namespace", self.namespace)])
+            r = self.post(
+                "asset.filter.namespace.describe", [("namespace", self.namespace)]
+            )
             self._data = None if r is None else r.getchildren()[0]
         return self._data
 
@@ -124,7 +136,11 @@ class Namespace(Request):
     def filters(self):
         if self._filters is None:
             r = self.post("asset.filter.list", [("namespace", self.namespace)])
-            self._filters = None if r is None else [Filter(self.namespace, x) for x in r.xpath("./filter/text()")]
+            self._filters = (
+                None
+                if r is None
+                else [Filter(self.namespace, x) for x in r.xpath("./filter/text()")]
+            )
         return self._filters
 
     @property
@@ -190,7 +206,9 @@ class Filter(Request):
 
         return obj
 
-    def __init__(self, namespace: Optional[str] = None, name: Optional[str] = None) -> None:
+    def __init__(
+        self, namespace: Optional[str] = None, name: Optional[str] = None
+    ) -> None:
         self.namespace = namespace
         self.name = name
         self._data: Optional["etree._Element"] = None
@@ -252,7 +270,9 @@ class Filter(Request):
             :param root: lxml.etree._Element (Root of the XML document)
             """
             for type_elem in root.findall(".//type"):  # Find all <type> elements
-                name_elem = type_elem.find("name")  # Find the <name> element inside <type>
+                name_elem = type_elem.find(
+                    "name"
+                )  # Find the <name> element inside <type>
                 if name_elem is not None:
                     type_value = name_elem.text.strip() if name_elem.text else ""
                     type_elem.set("type", type_value)  # Set as attribute
@@ -329,10 +349,25 @@ class Form(Request):
     def create(self) -> None:
         self.destroy()
 
+        # Need to remove the creation data
+        xargs = copy.deepcopy(self.data)
+
+        def transform_form_xml(element: etree._Element) -> None:
+            """
+            Modifies the given lxml.etree._Element by removing all child elements
+            named 'ctime' and 'creator'.
+
+            :param element: The XML element to be transformed.
+            """
+            for child in element.findall("ctime") + element.findall("creator"):
+                element.remove(child)
+
+        transform_form_xml(xargs)
+
         self.post(
             "asset.form.create",
             [("name", self.name)],
-            self.data.getchildren(),
+            xargs.getchildren(),
         )
 
 
@@ -340,7 +375,9 @@ class Asset(Request):
     @classmethod
     def query_name(cls, name: str) -> Union["Asset", "Collection"]:
         """Finds the newest asset with the given name"""
-        rv = cls.post("asset.query", [("where", f"name = '{name}'"), ("action", "get-meta")])
+        rv = cls.post(
+            "asset.query", [("where", f"name = '{name}'"), ("action", "get-meta")]
+        )
         assets = rv.xpath("./asset")
         asset = sorted(
             assets,
@@ -506,6 +543,8 @@ class Server(Request):
     @property
     def version(self) -> dict:
         if self._version is None:
-            self._version = {child.tag: child.text for child in self.post("server.version")}
+            self._version = {
+                child.tag: child.text for child in self.post("server.version")
+            }
 
         return self._version

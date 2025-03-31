@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form id="2" name="dng">
+  <label>DNG</label>
+  <tag>TYPE:asset-detail</tag>
+  <predicate>type = image/dng or ctype = image/dng</predicate>
+  <layout>
+    <vertical>
+      <section name="dng-section">
+        <label>DNG Data</label>
+        <xpath>mf-image-dng</xpath>
+        <layout>
+          <field name="dng-defaultcropsize">
+            <label>DefaultCropSize</label>
+            <xpath>attribute[@id='50718']</xpath>
+            <description>0xC61E: DefaultCropSize</description>
+          </field>
+          <field name="dng-defaultcroporigin">
+            <label>DefaultCropOrigin</label>
+            <xpath>attribute[@id='50719']</xpath>
+            <description>0xC61F: DefaultCropOrigin</description>
+          </field>
+          <field name="dng-defaultscale">
+            <label>DefaultScale</label>
+            <xpath>attribute[@id='50720']</xpath>
+            <description>0xC620: DefaultScale</description>
+          </field>
+          <field name="dng-bestqualityscale">
+            <label>BestQualityScale</label>
+            <xpath>attribute[@id='50721']</xpath>
+            <description>0xC621: BestQualityScale</description>
+          </field>
+          <field name="dng-chromablurradius">
+            <label>ChromaBlurRadius</label>
+            <xpath>attribute[@id='50722']</xpath>
+            <description>0xC622: ChromaBlurRadius</description>
+          </field>
+          <field name="dng-antialiasstrength">
+            <label>AntiAliasStrength</label>
+            <xpath>attribute[@id='50723']</xpath>
+            <description>0xC623: AntiAliasStrength</description>
+          </field>
+          <field name="dng-shadowscale">
+            <label>ShadowScale</label>
+            <xpath>attribute[@id='50724']</xpath>
+            <description>0xC624: ShadowScale</description>
+          </field>
+          <field name="dng-dngprivatedata">
+            <label>DNGPrivateData</label>
+            <xpath>attribute[@id='50725']</xpath>
+            <description>0xC625: DNGPrivateData</description>
+          </field>
+          <field name="dng-makernotesafety">
+            <label>MakerNoteSafety</label>
+            <xpath>attribute[@id='50727']</xpath>
+            <description>0xC627: MakerNoteSafety</description>
+          </field>
+          <field name="dng-rawimagesegmentation">
+            <label>RawImageSegmentation</label>
+            <xpath>attribute[@id='50728']</xpath>
+            <description>0xC628: RawImageSegmentation</description>
+          </field>
+          <field name="dng-calibrationilluminant1">
+            <label>CalibrationIlluminant1</label>
+            <xpath>attribute[@id='50778']</xpath>
+            <description>0xC65A: CalibrationIlluminant1</description>
+          </field>
+          <field name="dng-calibrationilluminant2">
+            <label>CalibrationIlluminant2</label>
+            <xpath>attribute[@id='50779']</xpath>
+            <description>0xC65B: CalibrationIlluminant2</description>
+          </field>
+          <field name="dng-bestqualitysize">
+            <label>BestQualitySize</label>
+            <xpath>attribute[@id='50780']</xpath>
+            <description>0xC65C: BestQualitySize</description>
+          </field>
+          <field name="dng-rawdatauniqueid">
+            <label>RawDataUniqueID</label>
+            <xpath>attribute[@id='50781']</xpath>
+            <description>0xC65D: RawDataUniqueID</description>
+          </field>
+          <field name="dng-originalrawfilename">
+            <label>OriginalRawFileName</label>
+            <xpath>attribute[@id='50827']</xpath>
+            <description>0xC68B: OriginalRawFileName</description>
+          </field>
+          <field name="dng-originalrawfiledata">
+            <label>OriginalRawFileData</label>
+            <xpath>attribute[@id='50828']</xpath>
+            <description>0xC68C: OriginalRawFileData</description>
+          </field>
+          <field name="dng-activearea">
+            <label>ActiveArea</label>
+            <xpath>attribute[@id='50829']</xpath>
+            <description>0xC68D: ActiveArea</description>
+          </field>
+          <field name="dng-maskedareas">
+            <label>MaskedAreas</label>
+            <xpath>attribute[@id='50830']</xpath>
+            <description>0xC68E: MaskedAreas</description>
+          </field>
+          <field name="dng-asshoticcprofile">
+            <label>AsShotICCProfile</label>
+            <xpath>attribute[@id='50831']</xpath>
+            <description>0xC68F: AsShotICCProfile</description>
+          </field>
+          <field name="dng-asshotpreprofilematrix">
+            <label>AsShotPreProfileMatrix</label>
+            <xpath>attribute[@id='50832']</xpath>
+            <description>0xC690: AsShotPreProfileMatrix</description>
+          </field>
+          <field name="dng-currenticcprofile">
+            <label>CurrentICCProfile</label>
+            <xpath>attribute[@id='50833']</xpath>
+            <description>0xC691: CurrentICCProfile</description>
+          </field>
+          <field name="dng-currentpreprofilematrix">
+            <label>CurrentPreProfileMatrix</label>
+            <xpath>attribute[@id='50834']</xpath>
+            <description>0xC692: CurrentPreProfileMatrix</description>
+          </field>
+          <field name="dng-colorimetricreference">
+            <label>ColorimetricReference</label>
+            <xpath>attribute[@id='50879']</xpath>
+            <description>0xC6BF: ColorimetricReference</description>
+          </field>
+          <field name="dng-cameracalibrationsignature">
+            <label>CameraCalibrationSignature</label>
+            <xpath>attribute[@id='50931']</xpath>
+            <description>0xC6F3: CameraCalibrationSignature</description>
+          </field>
+          <field name="dng-profilecalibrationsignature">
+            <label>ProfileCalibrationSignature</label>
+            <xpath>attribute[@id='50932']</xpath>
+            <description>0xC6F4: ProfileCalibrationSignature</description>
+          </field>
+          <field name="dng-asshotprofilename">
+            <label>AsShotProfileName</label>
+            <xpath>attribute[@id='50934']</xpath>
+            <description>0xC6F6: AsShotProfileName</description>
+          </field>
+          <field name="dng-noisereductionapplied">
+            <label>NoiseReductionApplied</label>
+            <xpath>attribute[@id='50935']</xpath>
+            <description>0xC6F7: NoiseReductionApplied</description>
+          </field>
+          <field name="dng-profilename">
+            <label>ProfileName</label>
+            <xpath>attribute[@id='50936']</xpath>
+            <description>0xC6F8: ProfileName</description>
+          </field>
+          <field name="dng-profilehuesatmapdims">
+            <label>ProfileHueSatMapDims</label>
+            <xpath>attribute[@id='50937']</xpath>
+            <description>0xC6F9: ProfileHueSatMapDims</description>
+          </field>
+          <field name="dng-profilehuesatmapdata1">
+            <label>ProfileHueSatMapData1</label>
+            <xpath>attribute[@id='50938']</xpath>
+            <description>0xC6FA: ProfileHueSatMapData1</description>
+          </field>
+          <field name="dng-profilehuesatmapdata2">
+            <label>ProfileHueSatMapData2</label>
+            <xpath>attribute[@id='50939']</xpath>
+            <description>0xC6FB: ProfileHueSatMapData2</description>
+          </field>
+          <field name="dng-profiletonecurve">
+            <label>ProfileToneCurve</label>
+            <xpath>attribute[@id='50940']</xpath>
+            <description>0xC6FC: ProfileToneCurve</description>
+          </field>
+          <field name="dng-profileembedpolicy">
+            <label>ProfileEmbedPolicy</label>
+            <xpath>attribute[@id='50941']</xpath>
+            <description>0xC6FD: ProfileEmbedPolicy</description>
+          </field>
+          <field name="dng-profilecopyright">
+            <label>ProfileCopyright</label>
+            <xpath>attribute[@id='50942']</xpath>
+            <description>0xC6FE: ProfileCopyright</description>
+          </field>
+          <field name="dng-forwardmatrix1">
+            <label>ForwardMatrix1</label>
+            <xpath>attribute[@id='50964']</xpath>
+            <description>0xC714: ForwardMatrix1</description>
+          </field>
+          <field name="dng-forwardmatrix2">
+            <label>ForwardMatrix2</label>
+            <xpath>attribute[@id='50965']</xpath>
+            <description>0xC715: ForwardMatrix2</description>
+          </field>
+          <field name="dng-previewapplicationname">
+            <label>PreviewApplicationName</label>
+            <xpath>attribute[@id='50966']</xpath>
+            <description>0xC716: PreviewApplicationName</description>
+          </field>
+          <field name="dng-previewapplicationversion">
+            <label>PreviewApplicationVersion</label>
+            <xpath>attribute[@id='50967']</xpath>
+            <description>0xC717: PreviewApplicationVersion</description>
+          </field>
+          <field name="dng-previewsettingsname">
+            <label>PreviewSettingsName</label>
+            <xpath>attribute[@id='50968']</xpath>
+            <description>0xC718: PreviewSettingsName</description>
+          </field>
+          <field name="dng-previewsettingsdigest">
+            <label>PreviewSettingsDigest</label>
+            <xpath>attribute[@id='50969']</xpath>
+            <description>0xC719: PreviewSettingsDigest</description>
+          </field>
+          <field name="dng-previewcolorspace">
+            <label>PreviewColorSpace</label>
+            <xpath>attribute[@id='50970']</xpath>
+            <description>0xC71A: PreviewColorSpace</description>
+          </field>
+          <field name="dng-previewdatetime">
+            <label>PreviewDateTime</label>
+            <xpath>attribute[@id='50971']</xpath>
+            <description>0xC71B: PreviewDateTime</description>
+          </field>
+          <field name="dng-rawimagedigest">
+            <label>RawImageDigest</label>
+            <xpath>attribute[@id='50972']</xpath>
+            <description>0xC71C: RawImageDigest</description>
+          </field>
+          <field name="dng-originalrawfiledigest">
+            <label>OriginalRawFileDigest</label>
+            <xpath>attribute[@id='50973']</xpath>
+            <description>0xC71D: OriginalRawFileDigest</description>
+          </field>
+          <field name="dng-subtileblocksize">
+            <label>SubTileBlockSize</label>
+            <xpath>attribute[@id='50974']</xpath>
+            <description>0xC71E: SubTileBlockSize</description>
+          </field>
+          <field name="dng-rowinterleavefactor">
+            <label>RowInterleaveFactor</label>
+            <xpath>attribute[@id='50975']</xpath>
+            <description>0xC71F: RowInterleaveFactor</description>
+          </field>
+          <field name="dng-profilelooktabledims">
+            <label>ProfileLookTableDims</label>
+            <xpath>attribute[@id='50981']</xpath>
+            <description>0xC725: ProfileLookTableDims</description>
+          </field>
+          <field name="dng-profilelooktabledata">
+            <label>ProfileLookTableData</label>
+            <xpath>attribute[@id='50982']</xpath>
+            <description>0xC726: ProfileLookTableData</description>
+          </field>
+        </layout>
+      </section>
+    </vertical>
+  </layout>
+</form>

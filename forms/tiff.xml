@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name="tiff">
+  <label>TIFF</label>
+  <tag>TYPE:asset-detail</tag>
+  <predicate>type = image/dng or type = image/tiff or ctype = image/dng or ctype = image/tiff</predicate>
+  <layout>
+    <vertical>
+      <section name="tiff-section">
+        <label>EXIF Data</label>
+        <xpath>mf-image-tiff</xpath>
+        <layout>
+          <horizontal>
+            <field name="tiff-imagewidth">
+              <description>0x0100: ImageWidth</description>
+              <label>Image Width</label>
+              <xpath>attribute[@id='256']</xpath>
+            </field>
+            <field name="tiff-imageheight">
+              <description>0x0101: Image Height</description>
+            <label>Image Height</label>
+              <xpath>attribute[@id='257']</xpath>
+            </field>
+          </horizontal>
+          <field name="tiff-bitspersample">
+            <description>0x0102: Bits Per Sample</description>
+            <label>Bits Per Sample</label>
+            <xpath>attribute[@id='258']</xpath>
+          </field>
+          <field name="tiff-compression">
+            <description>0x0103: Compression</description>
+            <label>Compression</label>
+            <xpath>attribute[@id='259']</xpath>
+          </field>
+          <field name="tiff-photometricinterpretation">
+            <description>0x0106: Photometric Interpretation</description>
+            <label>Photometric Interpretation</label>
+            <xpath>attribute[@id='262']</xpath>
+          </field>
+          <field name="tiff-orientation">
+            <description>0x0112: Orientation</description>
+            <label>Orientation</label>
+            <xpath>attribute[@id='274']</xpath>
+          </field>
+          <field name="tiff-samplesperpixel">
+            <description>0x0115: Samples Per Pixel</description>
+            <label>Samples Per Pixel</label>
+            <xpath>attribute[@id='277']</xpath>
+          </field>
+          <field name="tiff-planarconfiguration">
+            <description>0x011C: Planar Configuration</description>
+            <label>Planar Configuration</label>
+            <xpath>attribute[@id='284']</xpath>
+          </field>
+          <horizontal>
+            <field name="tiff-xresolution">
+              <description>0x011A: X Resolution</description>
+            <label>X Resolution</label>
+              <xpath>attribute[@id='282']</xpath>
+            </field>
+            <field name="tiff-yresolution">
+              <description>0x011B: Y Resolution</description>
+            <label>Y Resolution</label>
+              <xpath>attribute[@id='283']</xpath>
+            </field>
+          </horizontal>
+          <field name="tiff-resolutionunit">
+            <description>0x0128: Resolution Unit</description>
+            <label>Resolution Unit</label>
+            <xpath>attribute[@id='296']</xpath>
+          </field>
+          <field name="tiff-software">
+            <description>0x0131: Software</description>
+            <label>Software</label>
+            <xpath>attribute[@id='305']</xpath>
+          </field>
+          <field name="tiff-datetime">
+            <description>0x0132: Date/Time</description>
+            <label>Date/Time</label>
+            <xpath>attribute[@id='306']</xpath>
+          </field>
+          <field name="tiff-artist">
+            <description>0x013B: Artist</description>
+            <label>Artist</label>
+            <xpath>attribute[@id='315']</xpath>
+          </field>
+          <field name="tiff-whitepoint">
+            <description>0x013E: White Point</description>
+            <label>White Point</label>
+            <xpath>attribute[@id='318']</xpath>
+          </field>
+          <field name="tiff-primarychromaticities">
+            <description>0x013F: Primary Chromaticities</description>
+            <label>Primary Chromaticities</label>
+            <xpath>attribute[@id='319']</xpath>
+          </field>
+          <field name="tiff-ycbcrcoefficients">
+            <description>0x0211: YCbCr Coefficients</description>
+            <label>YCbCr Coefficients</label>
+            <xpath>attribute[@id='529']</xpath>
+          </field>
+          <field name="tiff-ycbcrsubsampling">
+            <description>0x0212: YCbCr SubSampling</description>
+            <label>YCbCr SubSampling</label>
+            <xpath>attribute[@id='530']</xpath>
+          </field>
+          <field name="tiff-ycbcrpositioning">
+            <description>0x0213: YCbCr Positioning</description>
+            <label>YCbCr Positioning</label>
+            <xpath>attribute[@id='531']</xpath>
+          </field>
+          <field name="tiff-referenceblackwhite">
+            <description>0x0214: Reference Black White</description>
+            <label>Reference Black White</label>
+            <xpath>attribute[@id='532']</xpath>
+          </field>
+        </layout>
+      </section>
+    </vertical>
+  </layout>
+</form>
