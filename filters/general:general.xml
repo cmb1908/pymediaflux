@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <filter namespace="general" name="general">
-  <description>Case in-sensitive search across multiple fields and descriptions</description>
   <label>General</label>
+  <description>Case in-sensitive search across multiple fields and descriptions</description>
   <arg>
     <name>Value</name>
     <description>Value</description>

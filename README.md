@@ -6,4 +6,14 @@ Mediaflux API python wrapper
 ```
 % python3 -m venv venv
 % source venv/bin/activate
-% pip install -r requirements.txt
+% pip install -r dev-requirements.txt
+
+## Pulling filters from mediaflux into git
+
+```
+% make pull-filters
+
+## Pushing filters to mediaflux
+
+```
+% make filters

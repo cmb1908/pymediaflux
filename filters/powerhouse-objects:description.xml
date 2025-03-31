@@ -7,9 +7,9 @@
     <type>
       <name>enumeration</name>
       <restriction base="enumeration">
-          <value description="equals">= ignore-case</value>
-          <value description="matches anywhere">matches anywhere ignore-case</value>
-          <value description="matches">matches ignore-case</value>
+        <value description="equals">= ignore-case</value>
+        <value description="matches anywhere">matches anywhere ignore-case</value>
+        <value description="matches">matches ignore-case</value>
       </restriction>
     </type>
   </arg>

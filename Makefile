@@ -1,4 +1,4 @@
-.PHONY: requirements-dev requirements warehouse-stats filters
+.PHONY: requirements-dev requirements warehouse-stats filters push-filters pull-filters
 
 WAREHOUSE_PROJECTS := $(shell python -m pymediaflux.members 1193191)
 WAREHOUSE_STATS := $(addsuffix .txt, $(WAREHOUSE_PROJECTS))
@@ -13,6 +13,10 @@ stats: $(WAREHOUSE_STATS)
 
 %.txt:
 	python -m pymediaflux.stats $* > $@
+
+pull-filters:
+	rm filters/*.xml
+	python -m pymediaflux.export_filters filters
 
 filters:
 	for f in `find filters -name \*xml -print | grep -v :`; do python -m pymediaflux.replace_filter_namespace $$f; done

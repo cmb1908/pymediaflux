@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<filter namespace="shotlist-browser" name="mtext-matches-anywhere">
+  <label>Metadata Text Contains</label>
+  <arg>
+    <name>value</name>
+    <label>Value</label>
+    <type>
+      <name>string</name>
+    </type>
+  </arg>
+  <aql>mtext matches anywhere ignore-case '$${value}$$'</aql>
+</filter>

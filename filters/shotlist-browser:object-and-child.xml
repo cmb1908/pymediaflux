@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<filter namespace="shotlist-browser" name="object-and-child">
+  <label>Objects with parent</label>
+  <arg>
+    <name>value</name>
+    <label>Value</label>
+    <type>
+      <name>asset</name>
+    </type>
+  </arg>
+  <aql>id=$${value}$$ or (asset in collection or subcollection of $${value}$$ and type='powerhouse/interest/object')</aql>
+</filter>
